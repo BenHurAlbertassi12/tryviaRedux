@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 
 class Feedback extends Component {
+  handleClickHome = () => {
+    const { history } = this.props;
+    history.push('/');
+  };
+
   handleClickRanking = () => {
     const { history } = this.props;
     history.push('/ranking');

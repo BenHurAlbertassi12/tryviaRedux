@@ -67,12 +67,15 @@ describe('Teste o componente <App.js />', () => {
     expect(buttonPlay).toHaveTextContent(/play again/i);
     const playAgainid = screen.getByTestId('btn-play-again');
     expect(playAgainid).toBeInTheDocument();
+    userEvent.click(playAgainid);
+    const { pathname } = history.location;
+    expect(pathname).toBe('/');
   })
 
 
   test(' Verificação tela de FeedBack ', () => {
     const { history } = renderWithRouterAndRedux(<App />, INITIAL_STATE
-      , '/feedback');
+      , '/ranking');
     const buttonInicial = screen.getByRole('button', {
       name: /tela inicial/i
     })
