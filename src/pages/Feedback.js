@@ -4,11 +4,6 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 
 class Feedback extends Component {
-  handleClickHome = () => {
-    const { history } = this.props;
-    history.push('/');
-  };
-
   handleClickRanking = () => {
     const { history } = this.props;
     history.push('/ranking');
@@ -39,13 +34,6 @@ class Feedback extends Component {
           onClick={ this.handleClickHome }
         >
           Play Again
-        </button>
-        <button
-          data-testid="btn-go-home"
-          type="button"
-          onClick={ this.handleClickHome }
-        >
-          Tela inicial
         </button>
 
         <button
