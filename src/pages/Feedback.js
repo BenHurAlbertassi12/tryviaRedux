@@ -40,13 +40,6 @@ class Feedback extends Component {
         >
           Play Again
         </button>
-        <button
-          data-testid="btn-go-home"
-          type="button"
-          onClick={ this.handleClickHome }
-        >
-          Tela inicial
-        </button>
 
         <button
           data-testid="btn-ranking"
