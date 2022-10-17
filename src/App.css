@@ -1,5 +1,5 @@
-:root {
-  --color:#17C3B2;
+/* :root {
+  --color: #17c3b2;
 }
 
 * {
@@ -10,16 +10,16 @@
 }
 
 body {
-  background-image: url("https://assets2.razerzone.com/images/pnx.assets/618c0b65424070a1017a7168ea1b6337/razer-wallpapers-page-hero-mobile.jpg");
+  background-image: url('https://assets2.razerzone.com/images/pnx.assets/618c0b65424070a1017a7168ea1b6337/razer-wallpapers-page-hero-mobile.jpg');
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
 
 }
 
 .App-header {
   align-items: center;
-  background-image: url("https://assets2.razerzone.com/images/pnx.assets/618c0b65424070a1017a7168ea1b6337/razer-wallpapers-page-hero-mobile.jpg");
-  background-size:cover;
+  background-image: url('https://assets2.razerzone.com/images/pnx.assets/618c0b65424070a1017a7168ea1b6337/razer-wallpapers-page-hero-mobile.jpg');
+  background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
@@ -27,42 +27,43 @@ body {
   margin: 0 auto;
   font-size: medium;
   width: 60%;
-  
 }
 
 input {
   display: flex;
-  border:  2px solid #17C3B2;
+  border: 2px solid #17C3B2;
   border-radius: 20px;
   color: hwb(279 10% 35%);
-  flex-direction:row;
+  flex-direction: row;
   font-size: 80%;
   font-weight: bold;
-  font-style:italic;
+  font-style: italic;
   padding: 0.8rem;
 }
 
-p{
- color: var(--color);
+p {
+  color: var(--color);
 }
-.pName{
-  color:rgba(88, 62, 203, 0.923);
+
+.pName {
+  color: rgba(88, 62, 203, 0.923);
   font-size: 4rem;
   text-shadow: 1px 1px var(--color);
-  
 }
-.pcategory{
- color:rgba(88, 62, 203, 0.923);
- font-size: 4rem;
- text-shadow: 1px 1px var(--color);
+
+.pcategory {
+  color: rgba(88, 62, 203, 0.923);
+  font-size: 4rem;
+  text-shadow: 1px 1px var(--color);
 }
-.pQuestions{
- color: rgb(237, 134, 213);
- font-style: italic;
- font-family:Verdana, Geneva, Tahoma, sans-serif;
- text-shadow: 1px 1px rgb(231, 18, 227);
+
+.pQuestions {
+  color: rgb(237, 134, 213);
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 1px 1px rgb(231, 18, 227);
 }
-/* From uiverse.io by @nikk7007 */
+
 button {
   background-color: transparent;
   border: 2px solid #17C3B2;
@@ -78,9 +79,9 @@ button {
   text-transform: uppercase;
   transition: .3s;
   z-index: 1;
- }
+}
 
- button::before {
+button::before {
   background: #17C3B2;
   content: '';
   display: block;
@@ -92,16 +93,16 @@ button {
   top: 50%;
   width: 0;
   z-index: -1;
- }
- 
- button:hover::before {
+}
+
+button:hover::before {
   width: 105%;
- }
- 
- button:hover {
+}
+
+button:hover {
   color: #111;
- }
- 
+}
+
 h1 {
   color: #17C3B2;
   font-size: 3rem;
@@ -115,7 +116,7 @@ h1 {
 
 .App-logo {
   height: 30rem;
-  padding: 2rem ;
+  padding: 2rem;
   pointer-events: none;
 }
 
@@ -127,7 +128,7 @@ h1 {
   border: 3px solid rgb(6, 240, 15);
 }
 
-@media ( prefers-reduced-motion : no-preference ) {
+@media (prefers-reduced-motion : no-preference) {
 
   .App-logo {
     animation: shake infinite 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -151,19 +152,24 @@ h1 {
 
 @keyframes shake {
 
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
 
-  20%, 80% {
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
-}
+} */

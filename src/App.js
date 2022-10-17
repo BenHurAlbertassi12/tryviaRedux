@@ -11,11 +11,11 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img
+        {/* <img
           src="https://www.pizza-shoppe.com/wp-content/uploads/2020/08/Trivia-Night-Text-Glow.png"
           className="App-logo"
           alt="logo"
-        />
+        /> */}
         <div>
           <Switch>
             <Route exact path="/" component={ Login } />
