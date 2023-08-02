@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { MdBuild } from 'react-icons/md';
+import { Center, Input, Button, ButtonGroup } from '@chakra-ui/react';
 import { typeLogin } from '../redux/action/index';
 
 class Login extends Component {
@@ -56,40 +58,58 @@ class Login extends Component {
   render() {
     const { name, email, isBtnDisabled } = this.state;
     return (
-      <form>
-        <input
-          data-testid="input-player-name"
-          type="text"
-          value={ name }
-          name="name"
-          placeholder="Digite seu Nome"
-          onChange={ this.handleInput }
-        />
-        <input
-          data-testid="input-gravatar-email"
-          placeholder="Digite seu Email"
-          type="text"
-          value={ email }
-          name="email"
-          onChange={ this.handleInput }
-          required
-        />
-        <button
-          data-testid="btn-play"
-          type="submit"
-          disabled={ isBtnDisabled }
-          onClick={ this.handleClick }
-        >
-          Play
-        </button>
-        <button
-          data-testid="btn-settings"
-          type="button"
-          onClick={ this.handleClickSettings }
-        >
-          Settings
-        </button>
-      </form>
+      <Center margin="15px">
+        <form>
+          <Center>
+
+            <Input
+              marginBottom="15px"
+              data-testid="input-player-name"
+              type="text"
+              value={ name }
+              name="name"
+              placeholder="Digite seu Nome"
+              onChange={ this.handleInput }
+            />
+          </Center>
+          <Center>
+            <Input
+              marginBottom="15px"
+              data-testid="input-gravatar-email"
+              placeholder="Digite seu Email"
+              type="text"
+              value={ email }
+              name="email"
+              onChange={ this.handleInput }
+              required
+            />
+          </Center>
+          <Center>
+            <ButtonGroup direction="row" spacing={ 4 }>
+              <Button
+                data-testid="btn-play"
+                type="submit"
+                disabled={ isBtnDisabled }
+                onClick={ this.handleClick }
+                colorScheme="teal"
+                variant="solid"
+              >
+                Play
+              </Button>
+              <Button
+                leftIcon={ <MdBuild /> }
+                colorScheme="pink"
+                variant="solid"
+                data-testid="btn-settings"
+                type="button"
+                onClick={ this.handleClickSettings }
+              >
+                Settings
+              </Button>
+            </ButtonGroup>
+          </Center>
+        </form>
+      </Center>
     );
   }
 }
