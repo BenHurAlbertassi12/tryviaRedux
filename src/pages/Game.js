@@ -141,7 +141,7 @@ class Game extends React.Component {
             bg="#DDDDDD"
             color="black"
             p={ 4 }
-            w="120vh"
+            w="75%"
             borderRadius="md"
             boxShadow="lg"
           >
