@@ -1,6 +1,19 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {
+  Center,
+  Input, Button,
+  ButtonGroup,
+  Container,
+  AbsoluteCenter,
+  Card,
+  Box,
+  HStack,
+  Flex,
+  Text,
+} from '@chakra-ui/react';
 import Loading from '../components/Loading';
 import Header from '../components/Header';
 import { typeScore, typeAssertions } from '../redux/action';
@@ -123,69 +136,99 @@ class Game extends React.Component {
     return (
       <div>
         <Header />
-        <h1 data-testid="timertest">
-          Tempo:
-          {tempo}
-        </h1>
-        {loading && <Loading />}
-        {response.length > 0 && (
-          <div>
-            <p className="pcategory" data-testid="question-category">
-              Category:
-              {' '}
-              {questions[index].category}
-            </p>
-            <p
-              className="pQuestions"
-              data-testid="question-text"
-            >
-              {questions[index].question}
-
-            </p>
-            <div data-testid="answer-options">
-              {response.map((elem, i) => {
-                if (elem === questions[index].correct_answer) {
-                  return (
-                    <button
-                      className={ clicou && 'green-border' }
-                      key={ i }
-                      type="button"
-                      id="correct-answer"
-                      data-testid="correct-answer"
-                      onClick={ this.handleAnswersClick }
-                      disabled={ clicou }
-                    >
-                      {elem}
-                    </button>
-                  );
-                }
-                return (
-                  <button
-                    className={ clicou && 'red-border' }
-                    key={ i }
-                    type="button"
-                    data-testid={ `wrong-answer-${index}` }
-                    onClick={ this.handleAnswersClick }
-                    disabled={ clicou }
+        <Center h="100vh">
+          <Box
+            bg="#DDDDDD"
+            color="black"
+            p={ 4 }
+            w="100vh"
+            borderRadius="md"
+            boxShadow="lg"
+          >
+            <Center>
+              <h1 data-testid="timertest">
+                Tempo:
+                {tempo}
+              </h1>
+            </Center>
+            {loading && <Loading />}
+            {response.length > 0 && (
+              <div>
+                <Center>
+                  <Text
+                    textAlign="center"
+                    fontSize="1xl"
+                    className="pcategory"
+                    data-testid="question-category"
                   >
-                    {elem}
-                  </button>
-                );
-              })}
-              {clicou
+                    Category:
+                    {' '}
+                    {questions[index].category}
+                  </Text>
+                </Center>
+                <Center>
+                  <Text
+                    fontSize="2xl"
+                    className="pQuestions"
+                    data-testid="question-text"
+                    marginBottom="15px"
+                  >
+                    {questions[index].question}
+
+                  </Text>
+                </Center>
+                <Center />
+                <Center>
+                  <HStack spacing="24px" data-testid="answer-options">
+
+                    {response.map((elem, i) => {
+                      if (elem === questions[index].correct_answer) {
+                        return (
+                          <Button
+                            className={ clicou && 'green-border' }
+                            key={ i }
+                            type="button"
+                            id="correct-answer"
+                            data-testid="correct-answer"
+                            onClick={ this.handleAnswersClick }
+                            disabled={ clicou }
+                          >
+                            {elem}
+                          </Button>
+                        );
+                      }
+                      return (
+                        <Button
+                          className={ clicou && 'red-border' }
+                          key={ i }
+                          type="button"
+                          data-testid={ `wrong-answer-${index}` }
+                          onClick={ this.handleAnswersClick }
+                          disabled={ clicou }
+                        >
+                          {elem}
+                        </Button>
+                      );
+                    })}
+                    {clicou
                 && (
-                  <button
+                  <Button
                     data-testid="btn-next"
                     type="button"
                     onClick={ this.nextPergunta }
                   >
                     Next
 
-                  </button>
+                  </Button>
+
                 )}
-            </div>
-          </div>
-        )}
+
+                  </HStack>
+                </Center>
+              </div>
+            )}
+          </Box>
+        </Center>
       </div>
     );
   }
