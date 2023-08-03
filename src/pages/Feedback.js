@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-max-depth */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Box, Button, Center, Text } from '@chakra-ui/react';
 import Header from '../components/Header';
 
 class Feedback extends Component {
@@ -23,32 +25,63 @@ class Feedback extends Component {
   render() {
     const { score, assertions } = this.props;
     return (
-      <>
+      <div>
         <Header />
-        <div className="resultados">
-          RESULTADOS
-          <p data-testid="feedback-total-score">{ score }</p>
-          <p data-testid="feedback-total-question">{ assertions }</p>
-        </div>
-        <div data-testid="feedback-text">
-          <p>{this.mensagemDoFdb()}</p>
-        </div>
-        <button
-          data-testid="btn-play-again"
-          type="button"
-          onClick={ this.handleClickHome }
-        >
-          Play Again
-        </button>
+        <Center h="100vh">
+          <Box
+            bg="#DDDDDD"
+            color="black"
+            p={ 4 }
+            w="50%"
+            borderRadius="md"
+            boxShadow="lg"
+          >
+            <Center>
+              <Text fontSize="2xl">
+                Resultado:
+              </Text>
+            </Center>
+            <Center className="resultados">
+              <Text fontSize="2xl" data-testid="feedback-total-score">
+                { score }
+              </Text>
+              <Text fontSize="2xl" data-testid="feedback-total-question">
+                { assertions }
+              </Text>
+            </Center>
 
-        <button
-          data-testid="btn-ranking"
-          type="button"
-          onClick={ this.handleClickRanking }
-        >
-          Ranking
-        </button>
-      </>
+            <Center>
+              <Box data-testid="feedback-text">
+                <p>
+                  {this.mensagemDoFdb()}
+                </p>
+              </Box>
+            </Center>
+            <Center>
+
+              <Box>
+                <Button
+                  p="15px"
+                  m="15px"
+                  data-testid="btn-play-again"
+                  type="button"
+                  onClick={ this.handleClickHome }
+                >
+                  Play Again
+                </Button>
+
+                <Button
+                  data-testid="btn-ranking"
+                  type="button"
+                  onClick={ this.handleClickRanking }
+                >
+                  Ranking
+                </Button>
+              </Box>
+            </Center>
+          </Box>
+        </Center>
+      </div>
     );
   }
 }

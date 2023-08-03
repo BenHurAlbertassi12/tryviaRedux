@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -17,6 +18,8 @@ import {
 import Loading from '../components/Loading';
 import Header from '../components/Header';
 import { typeScore, typeAssertions } from '../redux/action';
+
+import bgImag from './bg.jpg';
 
 class Game extends React.Component {
   state = {
@@ -134,7 +137,12 @@ class Game extends React.Component {
   render() {
     const { response, loading, questions, clicou, index, tempo } = this.state;
     return (
-      <div>
+      <div
+        style={
+          { backgroundImage: `url(${bgImag})`, height: '100vh', backgroundSize: 'cover' }
+        }
+      >
+
         <Header />
         <Center h="100vh">
           <Box
